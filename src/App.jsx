@@ -5,12 +5,13 @@ import SelectedContact from "./components/SelectedContact";
 
 export default function App() {
   const [selectedContactId, setSelectedContactId] = useState(null);
+  console.log("Selected Contact ID in App:", selectedContactId);
 
   return (
     <>
       {selectedContactId ? (
         <SelectedContact
-          contactId={selectedContactId}
+          selectedContactId={selectedContactId}
           setSelectedContactId={setSelectedContactId}
         />
       ) : (

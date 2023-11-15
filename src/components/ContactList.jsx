@@ -20,7 +20,7 @@ export default function ContactList({ setSelectedContactId }) {
   }, []);
 
   return (
-    <table>
+    <table className="contact-list">
       <thead>
         <tr>
           <th colSpan="3">Contact List</th>
@@ -28,11 +28,14 @@ export default function ContactList({ setSelectedContactId }) {
       </thead>
       <tbody>
         {contacts.map((contact) => (
-          <ContactRow
+          <tr
+            className="contact-row"
             key={contact.id}
-            contact={contact}
-            setSelectedContactId={setSelectedContactId}
-          />
+            onClick={() => setSelectedContactId(contact.id)}
+          >
+            <td>{contact.name}</td>
+            {/* Add other contact details if needed */}
+          </tr>
         ))}
       </tbody>
     </table>
